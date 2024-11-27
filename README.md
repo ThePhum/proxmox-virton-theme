@@ -15,6 +15,15 @@ This project customizes the Proxmox VE web interface theme using the ExtJS libra
 - Access to the Proxmox VE server terminal.
 - Git installed.
 
+## Clone the ExtJS Repository
+
+This project uses ExtJS from the official Proxmox repository. You can clone the repository as follows:
+
+```bash
+git clone git://git.proxmox.com/git/extjs.git /usr/share/custom/extjs
+```
+For more information about ExtJS and its original source, visit the Proxmox Git Repository.
+
 ## Available Themes
 
 The following themes are available in ExtJS:
