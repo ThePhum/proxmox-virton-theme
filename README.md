@@ -52,12 +52,52 @@ The following themes are available in ExtJS:
    ```bash
    systemctl restart pveproxy
    ```
+## How to Change the Logo, Favicon, and Boot Screen
+
+1. **Backup Original Images**
+   ```bash
+   sudo mkdir /usr/share/custom/backup
+   sudo cp /usr/share/pve-manager/images/{favicon.ico,logo-128.png,proxmox_logo.png} /usr/share/custom/backup/
+   sudo cp /usr/share/qemu-server/bootsplash.jpg /usr/share/custom/backup/
+   ```
+
+2. **Prepare New Images**
+   Ensure your new images meet these specifications:
+   - `bootsplash.jpg`: 640x480 pixels
+   - `favicon.ico`: 64x64 pixels
+   - `logo-128.png`: 128x128 pixels (transparent background)
+   - `proxmox_logo.png`: 172x30 pixels (transparent background)
+
+   Transfer the new images to the Proxmox VE server:
+   ```bash
+   scp {bootsplash.jpg,favicon.ico,logo-128.png,proxmox_logo.png} username@pve.example.com:/usr/share/custom/
+   ```
+
+3. **Update the Customization Script**
+   Add the following lines to `/usr/share/custom/apply-theme.sh`:
+   ```bash
+   echo "cp -f /usr/share/custom/{favicon.ico,logo-128.png,proxmox_logo.png} /usr/share/pve-manager/images/" >> /usr/share/custom/apply-theme.sh
+   echo "cp -f /usr/share/custom/bootsplash.jpg /usr/share/qemu-server/" >> /usr/share/custom/apply-theme.sh
+   ```
+
+4. **Reapply Customizations**
+   Run the script to apply the changes:
+   ```bash
+   bash /usr/share/custom/apply-theme.sh
+   ```
+
+5. **Restart Proxmox Services**
+   Restart the Proxmox VE services to reflect the new images:
+   ```bash
+   systemctl restart pveproxy
+   ```
 
 ## Note
 
 - Modifying the Proxmox VE interface is not officially supported. Be cautious when applying changes.
 - Ensure to back up your Proxmox configuration before making any modifications.
 - If you find Proxmox VE useful, consider purchasing a [Proxmox subscription](https://www.proxmox.com/en/proxmox-ve/pricing) to support the developers.
+- This content was adapted from the [Lunar Computer post](https://lunar.computer/news/).
 
 ## License
 
