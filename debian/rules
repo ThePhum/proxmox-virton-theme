@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#DH_VERBOSE = 1
+
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	dh_auto_test
+	# check if all languages are still shipped, as e.g. Georgian (ka) is manually added by us
+	set -e; for l in \
+	  af bg ca cs da de el_GR en en_AU en_GB es et fa fi fr fr_CA gr he hr hu id it ja ka ko lt \
+	  lv mk nl no_NB no_NN pl pt pt_BR pt_PT ro ru sk sl sr sr_RS sv_SE th tr ukr vn zh_CN zh_TW; do \
+	    echo "checking for '$$l' locale"; \
+	    test -e "extjs/build/classic/locale/locale-$$l.js"; \
+	done

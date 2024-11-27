@@ -1,0 +1,3 @@
+# minified files that we want to ship
+libjs-extjs source: source-is-missing [extjs/build/*]
+libjs-extjs source: obsolete-url-in-packaging http://code.google.com/p/flexible-js-formatting/ [debian/copyright]

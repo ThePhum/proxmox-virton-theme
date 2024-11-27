@@ -1,0 +1,49 @@
+libjs-extjs (7.0.0-5) bookworm; urgency=medium
+
+  * improve French locale
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 14 Nov 2024 17:31:29 +0100
+
+libjs-extjs (7.0.0-4) bookworm; urgency=medium
+
+  * add Georgian translations
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 03 Aug 2023 16:24:17 +0200
+
+libjs-extjs (7.0.0-3) bookworm; urgency=medium
+
+  * update d/copyright
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 08 May 2023 11:55:41 +0200
+
+libjs-extjs (7.0.0-2) bookworm; urgency=medium
+
+  * re-build for our Debian Bookworm based releases
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 03 May 2023 17:55:50 +0200
+
+libjs-extjs (7.0.0-1) bullseye; urgency=medium
+
+  * import ExtJS 7.0 GPL release
+
+  * build for our Bullseye based releases
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 27 May 2021 13:35:34 +0200
+
+libjs-extjs (6.0.1-10) pve pmg; urgency=medium
+
+  * bump version for Debian Buster
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 22 May 2019 08:26:40 +0200
+
+libjs-extjs (6.0.1-2) unstable; urgency=medium
+
+  * bump version for debian stretch (to make room for jessie updates)
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 10 Mar 2017 09:15:04 +0100
+
+libjs-extjs (6.0.1-1) unstable; urgency=low
+
+  * initial import
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 25 Jan 2017 17:41:16 +0100
